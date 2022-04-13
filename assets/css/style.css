@@ -68,6 +68,11 @@ main .input-text input::placeholder {
     color: #000;
 }
 
-main .input-text img {
+main .input-text button {
+    background: unset;
+    cursor: pointer;
+}
+
+main .input-text button img {
     width: 26px;
 }

@@ -12,24 +12,34 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<div class="container">
-    <header>
-        <a class="logo" href="index.html">
-            <img src="./assets/img/logo.png" alt="Bate Papo Uol">
-        </a>
-        <div class="user">
-            <img src="./assets/img/user.png" alt="User Avatar">
-        </div>
-    </header>
-    <main>
-        <div class="input-text">
-            <input id="message" type="text" placeholder="Escreva aqui...">
-            <button type="button">
-                <img src="./assets/img/paper-plane.png" alt="Mensagem">
-            </button>
-        </div>
-    </main>
+<div id="container" class="container login">
+    <div id="login">
+        <img src="./assets/img/logo.png" alt="Bate Papo Uol">
+        <input type="text" placeholder="Digite seu nome">
+        <button onclick="login()" type="button">Entrar</button>
+    </div>
+    <div id="bate-papo">
+        <header>
+            <a class="logo" href="index.html">
+                <img src="./assets/img/logo.png" alt="Bate Papo Uol">
+            </a>
+            <div class="user">
+                <img src="./assets/img/user.png" alt="User Avatar">
+            </div>
+        </header>
+        <main>
+            <div class="input-text">
+                <input id="message" type="text" placeholder="Escreva aqui...">
+                <button type="button">
+                    <img src="./assets/img/paper-plane.png" alt="Mensagem">
+                </button>
+            </div>
+        </main>
+    </div>
 </div>
+
+<!-- AXIOS -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- JS -->
 <script src="./assets/js/script.js"></script>
 </body>

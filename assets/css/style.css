@@ -23,6 +23,54 @@ body {
     background: #F3F3F3;
 }
 
+.container.login {
+    background: #FFF;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login img {
+    width: 130px;
+    margin-top: 72px;
+}
+
+#login input {
+    width: 261px;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 94px;
+}
+
+#login input::placeholder {
+    color: #AEAEAE;
+}
+
+#login button {
+    width: 109px;
+    height: 45px;
+    background: #E7E7E7;
+    border-radius: 9px;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #696969;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#bate-papo {
+    display: none;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -60,7 +108,7 @@ main .input-text input {
     height: 30px;
 }
 
-main .input-text input::placeholder {
+main .input-text input, main .input-text input::placeholder {
     font-style: italic;
     font-weight: 400;
     font-size: 18px;

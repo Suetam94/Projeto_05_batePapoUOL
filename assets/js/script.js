@@ -10,9 +10,22 @@ async function login() {
         location.reload();
     }
 
+    const authMessages = await getMessages(userName.value);
+    await keepLoginAlive(userName.value);
+
     container.classList.remove('login');
     login.style.display = 'none';
     batePapo.style.display = 'block';
+}
+
+async function getMessages(name) {
+    const messages = await messagesRequest();
+
+    return messages.data.map(message => {
+        if (message.to === 'Todos' || message.to === name) {
+            return message;
+        }
+    });
 }
 
 async function loginRequest(name) {
@@ -26,3 +39,24 @@ async function loginRequest(name) {
 
     return response.status;
 }
+
+async function keepLoginAlive(name) {
+    const intervalId = setInterval(async () => await statusAliveRequest(name), 3000);
+}
+
+async function statusAliveRequest(name) {
+    await axios({
+        method: 'post',
+        url: 'https://mock-api.driven.com.br/api/v6/uol/status',
+        data: {
+            name: name
+        }
+    });
+}
+
+async function messagesRequest() {
+    const messages = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
+
+    return messages;
+}
+

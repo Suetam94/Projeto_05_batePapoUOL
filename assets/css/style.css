@@ -120,6 +120,7 @@ main #messages div {
 
 .username {
     color: #000;
+    word-wrap: break-word;
 }
 
 main .input-text {

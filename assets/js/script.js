@@ -23,17 +23,14 @@ async function login() {
 async function keepMessagesUpdate(username) {
     setInterval(async () => {
         const authMessages = await getMessages(username);
-
-        if (authMessages.length > sessionStorage.getItem('messagesLength')) {
-            await appendMessages(username, authMessages)
-        }
+        await appendMessages(username, authMessages)
     }, 1000);
 }
 
 async function appendMessages(username, authMessages) {
-    sessionStorage.setItem('messagesLength', authMessages.length);
     const messagesEl = document.getElementById('messages');
 
+    messagesEl.innerHTML = ``;
     authMessages.forEach(message => {
         if (message) {
             if (message.type === 'status') {

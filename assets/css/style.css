@@ -101,15 +101,15 @@ main #messages div {
     padding: 0 8px;
 }
 
-.status-message {
+.status {
     background: #DCDCDC;
 }
 
-.std-message {
+.message {
     background: #fff;
 }
 
-.direct-message {
+.private_message {
     background: #FFDEDE;
 }
 

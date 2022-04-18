@@ -11,6 +11,7 @@ async function login() {
     }
 
     const authMessages = await getMessages(userName.value);
+    console.log(authMessages);
     await keepLoginAlive(userName.value);
 
     container.classList.remove('login');
@@ -55,8 +56,6 @@ async function statusAliveRequest(name) {
 }
 
 async function messagesRequest() {
-    const messages = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
-
-    return messages;
+    return axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
 }
 

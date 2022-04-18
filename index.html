@@ -15,7 +15,7 @@
 <div id="container" class="container login">
     <div id="login">
         <img src="./assets/img/logo.png" alt="Bate Papo Uol">
-        <input onkeydown="isEnterPressed(this)"  type="text" placeholder="Digite seu nome">
+        <input id="username" onkeydown="isEnterPressed(this)"  type="text" placeholder="Digite seu nome">
         <button onclick="login(this)" type="button">Entrar</button>
     </div>
     <div id="bate-papo">
@@ -30,8 +30,8 @@
         <main>
             <div id="messages"></div>
             <div class="input-text">
-                <input id="message" type="text" placeholder="Escreva aqui...">
-                <button type="button">
+                <input id="message" type="text" placeholder="Escreva aqui..." onkeydown="isEnterPressed(this)">
+                <button onclick="sendMessage()" type="button">
                     <img src="./assets/img/paper-plane.png" alt="Mensagem">
                 </button>
             </div>

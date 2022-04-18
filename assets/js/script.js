@@ -3,6 +3,7 @@ async function login() {
     const login = document.getElementById('login');
     const batePapo = document.getElementById('bate-papo');
     const userName = document.querySelector('#login input');
+    sessionStorage.setItem('username', userName.value);
 
     const loginStatus = await loginRequest(userName.value);
 
@@ -20,8 +21,36 @@ async function login() {
     batePapo.style.display = 'block';
 }
 
+async function sendMessage() {
+    const newMessageInput = document.getElementById('message');
+    const newMessage = newMessageInput.value;
+    newMessageInput.value = '';
+    await sendMessageRequest(newMessage);
+}
+
+async function sendMessageRequest(message) {
+    const response = await axios({
+        method: 'post',
+        url: 'https://mock-api.driven.com.br/api/v6/uol/messages',
+        data: {
+            from: sessionStorage.getItem('username'),
+            to: "Todos",
+            text: message,
+            type: "message" // ou "private_message" para o bônus
+        }
+    });
+
+    // return response.status;
+}
+
 async function isEnterPressed() {
-    event.keyCode === 13 ? await login() : '';
+    const id = event.target.id;
+    if (id === 'username' && event.keyCode === 13) {
+        await login();
+    }
+    if (id === 'message' && event.keyCode === 13) {
+        await sendMessage();
+    }
 }
 
 async function keepMessagesUpdate(username) {
@@ -51,6 +80,7 @@ async function appendMessages(username, authMessages) {
         }
     })
 
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 async function getMessages(username) {

@@ -15,7 +15,7 @@
 <div id="container" class="container login">
     <div id="login">
         <img src="./assets/img/logo.png" alt="Bate Papo Uol">
-        <input id="username" onkeydown="isEnterPressed(this)"  type="text" placeholder="Digite seu nome">
+        <input id="username" onkeydown="isEnterPressed(this)" type="text" placeholder="Digite seu nome">
         <button onclick="login(this)" type="button">Entrar</button>
     </div>
     <div id="bate-papo">
@@ -23,8 +23,33 @@
             <a class="logo" href="index.html">
                 <img src="./assets/img/logo.png" alt="Bate Papo Uol">
             </a>
-            <div class="user">
+            <div onclick="openUserMenu()" class="user">
                 <img src="./assets/img/user.png" alt="User Avatar">
+                <div id="user-menu" class="user-menu">
+                    <span onclick="closeUserMenu()" id="close" class="close">&times;</span>
+                    <span class="title">Escolha um contato para enviar mensagem:</span>
+                    <ul id="participants">
+                        <li>
+                            <img src="./assets/img/user.png" alt="Todos">
+                            <span>Público</span>
+                        </li>
+                        <li>
+                            <img src="./assets/img/user-logo.png" alt="Público">
+                            <span>Público</span>
+                        </li>
+                    </ul>
+                    <span class="title">Escolha a visibilidade:</span>
+                    <ul id="visibility">
+                        <li>
+                            <img src="./assets/img/lock-open.png" alt="Público">
+                            <span>Público</span>
+                        </li>
+                        <li>
+                            <img src="./assets/img/lock-closed.png" alt="Reservadamente">
+                            <span>Reservadamente</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </header>
         <main>

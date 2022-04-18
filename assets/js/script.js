@@ -5,20 +5,41 @@ async function login() {
     const userName = document.querySelector('#login input');
     sessionStorage.setItem('username', userName.value);
 
-    const loginStatus = await loginRequest(userName.value);
-
-    if (loginStatus !== 200) {
-        location.reload();
-    }
-    await keepLoginAlive(userName);
-
-    const authMessages = await getMessages(userName);
-    await appendMessages(userName, authMessages);
-    await keepMessagesUpdate(userName);
+    // const loginStatus = await loginRequest(userName.value);
+    //
+    // if (loginStatus !== 200) {
+    //     location.reload();
+    // }
+    // await keepLoginAlive(userName);
+    //
+    // const authMessages = await getMessages(userName);
+    // await appendMessages(userName, authMessages);
+    // await keepMessagesUpdate(userName);
 
     container.classList.remove('login');
     login.style.display = 'none';
     batePapo.style.display = 'block';
+}
+
+function openUserMenu() {
+    const userMenuEl = document.getElementById('user-menu');
+    userMenuEl.style.display = 'block';
+
+    const close = document.getElementById('close');
+
+    close.onclick = function() {
+        userMenuEl.style.display = "none";
+    }
+
+}
+
+function closeUserMenu() {
+    const userMenuEl = document.getElementById('user-menu');
+    const close = document.getElementById('close');
+
+    close.onclick = function() {
+        userMenuEl.style.display = "none";
+    }
 }
 
 async function sendMessage() {

@@ -15,8 +15,8 @@
 <div id="container" class="container login">
     <div id="login">
         <img src="./assets/img/logo.png" alt="Bate Papo Uol">
-        <input type="text" placeholder="Digite seu nome">
-        <button onclick="login()" type="button">Entrar</button>
+        <input onkeydown="isEnterPressed(this)"  type="text" placeholder="Digite seu nome">
+        <button onclick="login(this)" type="button">Entrar</button>
     </div>
     <div id="bate-papo">
         <header>

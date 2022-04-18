@@ -20,6 +20,10 @@ async function login() {
     batePapo.style.display = 'block';
 }
 
+async function isEnterPressed() {
+    event.keyCode === 13 ? await login() : '';
+}
+
 async function keepMessagesUpdate(username) {
     setInterval(async () => {
         const authMessages = await getMessages(username);

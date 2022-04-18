@@ -98,7 +98,7 @@ main #messages div {
     border-radius: 2px;
     display: flex;
     align-items: center;
-    padding: 0 8px;
+    padding: 2px 8px;
 }
 
 .status {
@@ -119,8 +119,9 @@ main #messages div {
 }
 
 .username {
+    max-width: 100%;
     color: #000;
-    word-wrap: break-word;
+    word-break: break-word;
 }
 
 main .input-text {
